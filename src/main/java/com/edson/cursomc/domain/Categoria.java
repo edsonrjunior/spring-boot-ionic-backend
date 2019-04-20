@@ -12,7 +12,6 @@ import javax.persistence.ManyToMany;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
-
 //@ManyToMany = Aqui basta referenciar que já foi feito na classe produtos.
 
 @Entity
@@ -28,7 +27,6 @@ public class Categoria implements Serializable {
 	@ManyToMany(mappedBy = "categorias")
 	private List<Produto> produtos = new ArrayList<>();
 
-	
 	public Categoria() {
 
 	}

@@ -15,10 +15,11 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 import com.edson.cursomc.domain.enums.TipoCliente;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 //@ElementCollection = Entidade fraca
 //@CollectionTable Tabela que será criada para armazenar os telefones
-
+//@JsonManagedReference = Pode serializar a classe Endereco
 @Entity
 public class Cliente implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -32,11 +33,12 @@ public class Cliente implements Serializable {
 	private String cpfOuCnpj;
 	private Integer tipo;
 
-	@OneToMany(mappedBy="cliente")
+	@JsonManagedReference
+	@OneToMany(mappedBy = "cliente")
 	private List<Endereco> enderecos = new ArrayList<>();
-	
+
 	@ElementCollection
-	@CollectionTable(name="TELEFONE")
+	@CollectionTable(name = "TELEFONE")
 	private Set<String> telefones = new HashSet<>();
 
 	public Cliente() {
