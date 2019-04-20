@@ -11,6 +11,7 @@ import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 
 import com.edson.cursomc.domain.enums.EstadoPagamento;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 //@Inheritance - Anotação de que Pagamento tem subclasses.
 //@Inheritance(strategy = InheritanceType.JOINED)  - Cria uma única tabela de Pedido. Com Boleto e com Cartão.
@@ -26,6 +27,7 @@ public abstract class Pagamento implements Serializable {
 	private Integer estado;
 	
 	//O id do Pagamento será o mesmo do Pedido
+	@JsonBackReference
 	@OneToOne
 	@JoinColumn(name = "pedido_id")
 	@MapsId
