@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.edson.cursomc.domain.Categoria;
 import com.edson.cursomc.services.CategoriaService;
 
+//Autowired = Para instanciar o objeto automaticamente.
+
 @RestController
 @RequestMapping(value = "/categorias")
 public class CategoriaResource {
