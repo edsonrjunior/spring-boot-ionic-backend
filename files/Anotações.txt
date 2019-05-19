@@ -1,0 +1,9 @@
+Criação do projeto do tipo Spring Starter Project;
+Configuração da dependência do banco de dados H2.
+Criação das classes de Domínio (domain).
+Enuns para os status de pagamento e tipo de cliente (enums).
+Interfaces para cada classe de domínio extendendo JPARepository (repositories).
+Resources com a configuração dos métodos GET, POST, PUT e DELETE
+Services com os métodos para buscar, incluir, atualizar e excluir.
+Classe de excessões.
+
