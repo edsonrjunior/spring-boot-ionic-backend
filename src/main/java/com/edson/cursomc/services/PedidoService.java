@@ -15,9 +15,16 @@ public class PedidoService {
 	@Autowired
 	private PedidoRepository repo;
 
+	
+//	@Autowired
+//	private EmailService emailService;
+	
 	public Pedido find(Integer id) {
 		Optional<Pedido> obj = repo.findById(id);
 		return obj.orElseThrow(() -> new ObjectNotFoundException(
 				"Objeto não encontrado! Id: " + id + ", Tipo: " + Pedido.class.getName(), null));
 	}
+
+	
+
 }
