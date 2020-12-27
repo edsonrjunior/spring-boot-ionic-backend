@@ -36,14 +36,16 @@ public class ClienteResource {
 		return ResponseEntity.ok(obj);
 	}
 	
-	//Receber uma categoria no formato Json e inserir no banco de dados.
+	//Receber um cliente no formato Json e inserir no banco de dados.
 		@RequestMapping(method = RequestMethod.POST)
 		public ResponseEntity<Void> insert(@Valid @RequestBody ClienteDTO objDto){
 			Cliente obj = service.fromDTO(objDto);
 			obj = service.insert(obj);
-			URI uri = ServletUriComponentsBuilder.
-			fromCurrentRequest().path("/{id}").
-			buildAndExpand(obj.getId()).toUri();
+			URI uri = ServletUriComponentsBuilder
+					.fromCurrentRequest()
+					.path("/{id}")
+					.buildAndExpand(obj.getId())
+					.toUri();
 			return ResponseEntity.created(uri).build();
 		}
 		
